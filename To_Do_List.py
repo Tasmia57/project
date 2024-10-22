@@ -1,4 +1,4 @@
-#A python project of "To Do List" by using object,function and module are given below.
+#A python project of "To Do List Application" by using object,function and module are given below.
 
 class TodoList:
     def __init__(self):
