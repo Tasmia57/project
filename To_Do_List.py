@@ -1,12 +1,12 @@
-#A python project of "To Do List" by using object,function and module are given below
+#A python project of "To Do List" by using object,function and module are given below.
 
 class TodoList:
     def __init__(self):
-        #fristly we have to initialize an empty to-do list.
+        #Fristly we have to initialize an empty to-do list.
         self.tasks = []
 
     def display_tasks(self):
-        """Display the current list of todos."""
+          # Display the current list of tasks.
         print("\nYOUR TO-DO LIST:")
         if not self.tasks:
             print("No tasks available.")
@@ -15,7 +15,7 @@ class TodoList:
                 print(f"{index}: {task}")
 
     def add_task(self):
-        """Add new tasks to the to-do list."""
+          #Add new tasks to the to-do list.
         input_str = input("Enter tasks to add in To-Do List : ")
         input_list = input_str.split()
         added = False
@@ -31,7 +31,7 @@ class TodoList:
             print("No valid tasks provided. To-Do List remains unchanged.")
 
     def delete_task(self):
-        """Delete a task from the to-do list."""
+          #Delete a task from the to-do list.
         self.display_tasks()
         if not self.tasks:  # If the todo list is empty
             return
@@ -47,7 +47,7 @@ class TodoList:
             print("Please enter a valid number.")
 
     def mark_completed(self):
-        """Mark a task as completed."""
+          #Mark a task as completed.
         self.display_tasks()
         if not self.tasks:
             return
@@ -63,7 +63,7 @@ class TodoList:
             print("Please enter a valid number.")
 
     def load_tasks(self):
-        """Load previously saved todos from a file."""
+         #Load previously saved tasks from a file.
         try:
             with open("tasks.txt", "r") as file:
                 lines = file.readlines()
@@ -73,23 +73,23 @@ class TodoList:
             print("No existing to-do list found. Starting with an empty list.")
 
     def save_tasks(self):
-        """Save current todos to a file."""
-        with open("todos.txt", "w") as file:
+          #Save current tasks to a file.
+        with open("tasks.txt", "w") as file:
             for task in self.tasks:
                 file.write(task + "\n")
         print("Your recent tasks successfully saved.")
 
 def main():
-    """Main function to run the to-do list application."""
+      #Main function to run the to-do list application.
     todo_list = TodoList()
     todo_list.load_tasks()
 
     while True:
         print("\nTO-DO LIST MENU:")
-        print("1. Display tasks")
-        print("2. Add a task")
-        print("3. Delete a task")
-        print("4. Mark a task as Completed")
+        print("1. Display Tasks")
+        print("2. Add A Task")
+        print("3. Delete A Task")
+        print("4. Mark A Task As Completed")
         print("5. Exit")
 
         choice = input("Enter your choice (1-5): ")
